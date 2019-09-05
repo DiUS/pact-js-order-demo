@@ -12,6 +12,7 @@ _Running step 1:_
 ```
 npm run test:consumer
 npm run test:pact:consumer
+npm run test:pact:publish
 ```
 
 ## Step 2: Write the provider test
