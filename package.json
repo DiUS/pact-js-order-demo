@@ -11,10 +11,10 @@
     "can-i-deploy": "npm run can-i-deploy:consumer && npm run can-i-deploy:provider",
     "can-i-deploy:consumer": "run-script-os",
     "can-i-deploy:provider": "run-script-os",
-    "can-i-deploy:consumer:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order Web' --version 1.0.0+${USER} --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
-    "can-i-deploy:provider:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order API' --version 1.0.0+${USER} --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
-    "can-i-deploy:consumer:win32": "cross-env $(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order Web' --version 1.0.0+${USERNAME} --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
-    "can-i-deploy:provider:win32": "cross-env $(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order API' --version 1.0.0+${USERNAME} --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1"
+    "can-i-deploy:consumer:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order Web' --version 1.0.0",
+    "can-i-deploy:provider:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order API' --version 1.0.0",
+    "can-i-deploy:consumer:win32": "cross-env .\\node_modules\\@pact-foundation\\pact-node\\standalone\\win32-1.63.0\\bin\\pact-broker.bat can-i-deploy --pacticipant \"Order Web\" --version \"1.0.0\"",
+    "can-i-deploy:provider:win32": "cross-env .\\node_modules\\@pact-foundation\\pact-node\\standalone\\win32-1.63.0\\bin\\pact-broker.bat can-i-deploy --pacticipant \"Order API\" --version \"1.0.0\""
   },
   "repository": {
     "type": "git",
@@ -30,20 +30,20 @@
     "node": ">=4"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "^7.0.2",
-    "@pact-foundation/pact-node": "^6.21.1",
+    "@pact-foundation/pact": "^9.1.0",
+    "@pact-foundation/pact-node": "^9.0.3",
     "chai": "^3.5.0",
     "chai-as-promised": "^7.1.1",
     "cli-color": "^1.1.0",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "mocha": "^3.5.3",
-    "nock": "^10.0.2",
-    "run-script-os": "^1.0.5"
+    "nock": "^10.0.6",
+    "run-script-os": "^1.0.7"
   },
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.1",
-    "express": "^4.14.0",
+    "express": "^4.17.1",
     "superagent": "^3.3.2"
   }
 }
