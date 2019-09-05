@@ -12,6 +12,7 @@ _Running step 1:_
 ```
 npm run test:consumer
 npm run test:pact:consumer
+npm run test:pact:publish
 ```
 
 ## Step 2: Write the provider test
@@ -26,6 +27,7 @@ _Running step 2_
 
 ```
 npm run test:pact:consumer
+npm run test:pact:publish
 npm run test:pact:provider
 ```
 
@@ -46,6 +48,6 @@ _Running step 3_
 ```
 npm run test:pact:provider # fail, but for another reason
 npm run test:pact:consumer # use flexible matchers
-npm run test:pact:consumer # publish the pact
+npm run test:pact:publish # publish the new pact
 npm run test:pact:provider # pass!
 ```
