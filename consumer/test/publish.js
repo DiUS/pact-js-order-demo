@@ -2,13 +2,10 @@ const pact = require('@pact-foundation/pact-node')
 const path = require('path')
 const opts = {
   pactFilesOrDirs: [path.resolve(__dirname, '../../pacts/')],
-  pactBroker: 'https://test.pact.dius.com.au',
-  pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-  pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
+  pactBroker: process.env.PACT_BROKER_BASE_URL,
+  pactBrokerToken: process.env.PACT_BROKER_TOKEN,
   tags: ['prod', 'test'],
-  consumerVersion:
-    '1.0.' +
-    (process.env.USER ? process.env.USER : Math.floor(new Date() / 1000)),
+  consumerVersion: '1.0.0'
 }
 
 pact
@@ -16,9 +13,7 @@ pact
   .then(() => {
     console.log('Pact contract publishing complete!')
     console.log('')
-    console.log('Head over to https://test.pact.dius.com.au/ and login with')
-    console.log('=> Username: dXfltyFMgNOFZAxr8io9wJ37iUpY42M')
-    console.log('=> Password: O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1')
+    console.log(`Head over to ${process.env.PACT_BROKER_BASE_URL} and login with the credentials from your email`)
     console.log('to see your published contracts.')
   })
   .catch(e => {

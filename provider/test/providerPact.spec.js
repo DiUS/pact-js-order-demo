@@ -29,16 +29,11 @@ describe('Pact Verification', () => {
     let opts = {
       provider: 'Order API',
       providerBaseUrl: 'http://localhost:8081',
-      providerStatesSetupUrl: 'http://localhost:8081/setup',
-      pactUrls: [
-        path.resolve(process.cwd(), './pacts/order_web-order_api.json'),
-      ],
-      // pactBrokerUrl: 'https://test.pact.dius.com.au/',
-      // pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-      // pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
-      // publishVerificationResult: true,
+      pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
+      pactBrokerToken: process.env.PACT_BROKER_TOKEN,
+      publishVerificationResult: true,
       tags: ['prod'],
-      providerVersion: '1.0.0',
+      providerVersion: '1.0.0'
     }
 
     return new Verifier().verifyProvider(opts).then(output => {
