@@ -46,5 +46,6 @@ _Running step 3_
 ```
 npm run test:pact:provider # fail, but for another reason
 npm run test:pact:consumer # use flexible matchers
+npm run test:pact:consumer # publish the pact
 npm run test:pact:provider # pass!
 ```
