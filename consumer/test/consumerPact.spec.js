@@ -43,7 +43,7 @@ describe('Pact with Order API', () => {
             method: 'GET',
           },
           willRespondWith: {
-            body: eachLike(orderProperties),
+            body: [ orderProperties ],
             status: 200,
             headers: {
               'Content-Type': 'application/json',
