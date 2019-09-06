@@ -11,8 +11,8 @@
     "can-i-deploy": "npm run can-i-deploy:consumer && npm run can-i-deploy:provider",
     "can-i-deploy:consumer": "run-script-os",
     "can-i-deploy:provider": "run-script-os",
-    "can-i-deploy:consumer:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order Web' --version 1.0.0",
-    "can-i-deploy:provider:darwin:linux": "$(find ./node_modules -name pact-broker | grep -e 'bin/pact-broker$' | head -n 1) can-i-deploy --pacticipant 'Order API' --version 1.0.0",
+    "can-i-deploy:consumer:darwin:linux": "pact-broker can-i-deploy --pacticipant 'Order Web' --version 1.0.0",
+    "can-i-deploy:provider:darwin:linux": "pact-broker can-i-deploy --pacticipant 'Order API' --version 1.0.0",
     "can-i-deploy:consumer:win32": "cross-env .\\node_modules\\@pact-foundation\\pact-node\\standalone\\win32-1.63.0\\bin\\pact-broker.bat can-i-deploy --pacticipant \"Order Web\" --version \"1.0.0\"",
     "can-i-deploy:provider:win32": "cross-env .\\node_modules\\@pact-foundation\\pact-node\\standalone\\win32-1.63.0\\bin\\pact-broker.bat can-i-deploy --pacticipant \"Order API\" --version \"1.0.0\""
   },
