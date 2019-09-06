@@ -14,14 +14,4 @@ module.exports = [
       },
     ],
   },
-  {
-    id: 2,
-    items: [
-      {
-        name: 'hotdog',
-        quantity: 3,
-        value: 15,
-      },
-    ],
-  },
 ]
